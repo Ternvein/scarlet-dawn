@@ -36,6 +36,7 @@
           <img class="flex0" src="{{item.img}}" height="25" width="25" />
           <label>{{item.name}}</label>
         </div>
+        <input type="number" name="items.{{item.id}}.system.quantity" value="{{item.system.quantity}}" min="1" step="1" {{#unless ../editable}}disabled{{/unless}}>
         {{#if ../editable}}
         <a class="fas fa-xmark-large" data-item-id="{{item.id}}" data-action="item" data-type="trash" data-tooltip="{{localize 'Delete'}}"></a>
         {{else}}
@@ -53,6 +54,7 @@
           <img class="flex0" src="{{item.img}}" height="25" width="25" />
           <label>{{item.name}}</label>
         </div>
+        <input type="number" name="items.{{item.id}}.system.quantity" value="{{item.system.quantity}}" min="1" step="1" {{#unless ../editable}}disabled{{/unless}}>
         {{#if ../editable}}
         <a class="fas fa-xmark-large" data-item-id="{{item.id}}" data-action="item" data-type="trash" data-tooltip="{{localize 'Delete'}}"></a>
         {{else}}

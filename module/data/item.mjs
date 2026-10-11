@@ -5,8 +5,8 @@ const {
 export class ItemData extends foundry.abstract.TypeDataModel {
     static _weightSchema() {
         return new SchemaField({
-            carry: new NumberField({ required: true, min: 0, step: 1, initial: 0, label: "SD.item.weight.carry" }),
-            equip: new NumberField({ required: true, min: 0, step: 1, initial: 0, label: "SD.item.weight.equip" }),
+            carry: new NumberField({ required: true, min: 0, step: 0.01, initial: 0, label: "SD.item.weight.carry" }),
+            equip: new NumberField({ required: true, min: 0, step: 0.01, initial: 0, label: "SD.item.weight.equip" }),
             is_standard: new BooleanField({ required: true, initial: true, label: "SD.item.weight.standard" }),
         }, { label: "SD.item.weight.name" });
     }
@@ -21,6 +21,7 @@ export class ItemData extends foundry.abstract.TypeDataModel {
     static defineSchema() {
         return {
             description: new HTMLField({ label: "SD.details.description" }),
+            quantity: new NumberField({ required: true, integer: true, min: 1, initial: 1, label: "SD.item.quantity" }),
             weight: ItemData._weightSchema(),
             price: new NumberField({ required: false, min: 0, initial: 0, label: "SD.item.price" }),
             splendor: ItemData._splendorSchema(),

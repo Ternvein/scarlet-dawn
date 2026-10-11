@@ -103,6 +103,28 @@ export class PCSheet extends SDActorSheet {
         return context;
     }
 
+    /** @override */
+    _processFormData(event, form, formData) {
+        const data = super._processFormData(event, form, formData);
+        const { items, ...rest } = data;
+        this._pendingItemUpdates = items ?? {};
+        return rest;
+    }
+
+    /** @override */
+    async _processSubmitData(event, form, submitData, options = {}) {
+        await super._processSubmitData(event, form, submitData, options);
+        const pending = this._pendingItemUpdates;
+        this._pendingItemUpdates = {};
+        if (!pending || !Object.keys(pending).length) return;
+        const updates = Object.entries(pending).map(([itemId, data]) => {
+            const clamped = Math.max(1, Math.trunc(Number(data?.system?.quantity) || 1));
+            return { _id: itemId, system: { quantity: clamped } };
+        });
+        const valid = updates.filter(update => this.actor.items.has(update._id));
+        if (valid.length) await this.actor.updateEmbeddedDocuments("Item", valid);
+    }
+
     static #roll(event, target) {
         switch (target.dataset.type) {
             case "abilities":
