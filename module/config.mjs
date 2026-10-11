@@ -548,7 +548,6 @@ export const SD = {
             weapon: "icons/svg/sword.svg",
             armor: "icons/svg/statue.svg",
             shield: "icons/svg/shield.svg",
-            coin: "icons/svg/coins.svg",
             trait: "icons/svg/aura.svg",
             spell_original: "icons/svg/daze.svg",
             spell_gray: "icons/svg/daze.svg",

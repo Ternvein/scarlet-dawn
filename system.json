@@ -55,9 +55,6 @@
             "shield": {
                 "htmlFields": ["description"]
             },
-            "coin": {
-                "htmlFields": ["description"]
-            },
             "trait": {
                 "htmlFields": ["description"]
             },
