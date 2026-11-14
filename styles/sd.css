@@ -1,0 +1,436 @@
+:root {
+  --sd-success-color: #056705;
+  --sd-failure-color: #c72a05;
+}
+
+.sd .window-content .collapsed {
+  display: none;
+}
+.sd .window-content .margin {
+  margin: 5px;
+}
+.sd .window-content input[type=number] {
+  -moz-appearance: textfield;
+}
+.sd .window-content input[type=number]::-webkit-inner-spin-button,
+.sd .window-content input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.sd .window-content input:not([type=checkbox]), .sd .window-content select {
+  background: none;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid;
+}
+.sd .window-content input:not([type=checkbox]):hover:not(:disabled), .sd .window-content input:not([type=checkbox]):focus:not(:disabled), .sd .window-content select:hover:not(:disabled), .sd .window-content select:focus:not(:disabled) {
+  box-shadow: none;
+}
+.sd .window-content select {
+  appearance: none;
+}
+.sd .window-content select option {
+  background: var(--input-background-color);
+}
+.sd .window-content a:hover {
+  text-shadow: none;
+}
+.sd .window-content .resizable {
+  overflow: auto;
+}
+
+.sd.sheet.actor {
+  --font-main-resources-size: var(--font-h4-size);
+  --font-attribute-size: var(--font-h4-size);
+}
+.sd.sheet.actor .header-details {
+  gap: 0 1ch;
+  flex-wrap: nowrap;
+}
+.sd.sheet.actor .charname input {
+  height: 1.2em;
+}
+.sd.sheet.actor .summary {
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: none;
+}
+.sd.sheet.actor .summary div label {
+  margin: 0 0 2px 8px;
+  font-size: 0.7em;
+  display: block;
+}
+.sd.sheet.actor .summary div.notify input {
+  font-weight: bold;
+  animation: 0.8s ease-in 1s infinite alternate notify;
+}
+.sd.sheet.actor .main-resources {
+  align-items: baseline;
+  justify-items: stretch;
+  gap: 4ch;
+  font-size: var(--font-main-resources-size);
+}
+.sd.sheet.actor .main-resources .attribute-check {
+  padding: 0 0.5rem;
+}
+.sd.sheet.actor .main-resources label, .sd.sheet.actor .main-resources input {
+  text-align: center;
+}
+.sd.sheet.actor .attribute-grid {
+  display: grid;
+  align-items: baseline;
+  justify-items: center;
+  gap: 0 1rch;
+}
+.sd.sheet.actor .attribute-value {
+  font-size: var(--font-attribute-size);
+  padding: 0.2rem;
+  min-height: 2.5rem;
+}
+.sd.sheet.actor .attribute-value input {
+  text-align: center;
+  min-width: calc(2ch + 1rem);
+}
+.sd.sheet.actor .attribute-value.flexrow {
+  flex-wrap: nowrap;
+}
+.sd.sheet.actor .attribute-check {
+  font-size: var(--font-attribute-size);
+  padding: 0.2rem;
+  text-align: center;
+  margin: 0;
+  justify-self: center;
+}
+.sd.sheet.actor .attribute-columns {
+  gap: 2ch;
+}
+.sd.sheet.actor .tab.attributes {
+  --font-saving-throw-size: inherit;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+.sd.sheet.actor .tab.attributes .roll-abilities {
+  font-size: 10rem;
+  text-align: center;
+}
+.sd.sheet.actor .tab.attributes .abilities {
+  grid: 1fr/2fr 2fr 1fr 1fr;
+}
+.sd.sheet.actor .tab.attributes .abilities .ability-name {
+  padding: 0.1em;
+  margin: 0;
+  text-align: center;
+}
+.sd.sheet.actor .tab.attributes .abilities .ability-mod {
+  text-align: center;
+  font-size: var(--font-attribute-size);
+  min-width: 2ch;
+  padding: 0;
+  border: none;
+}
+.sd.sheet.actor .tab.attributes .saving-throws {
+  grid: 1fr/2fr 1fr 1fr;
+}
+.sd.sheet.actor .tab.attributes .saving-throws .attribute-label {
+  font-size: var(--font-saving-throw-size);
+}
+.sd.sheet.actor .tab.attributes .saving-throws .attribute-value input {
+  min-width: calc(2ch + 1rem);
+}
+.sd.sheet.actor .tab.attributes .splendor {
+  grid: 1fr/1fr 1fr;
+}
+.sd.sheet.actor .tab.attributes .splendor input {
+  min-width: calc(2ch + 1rem);
+}
+.sd.sheet.actor .tab.attributes .splendor .attribute-value {
+  flex-wrap: nowrap;
+}
+.sd.sheet.actor .tab.attributes .armor-class {
+  display: grid;
+  grid: 1fr/1fr 1fr 1fr;
+}
+.sd.sheet.actor .tab.attributes .armor-class .fa-shield {
+  font-size: 2.5rem;
+  text-align: center;
+  position: relative;
+  width: 2em;
+  height: 2em;
+  padding-top: 0.333em;
+  filter: invert(1);
+}
+.sd.sheet.actor .tab.attributes .armor-class .fa-shield:before {
+  font-size: 2em;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  filter: invert(1);
+}
+.sd.sheet.actor .tab.attributes .attack-bonus {
+  grid: 1fr/2fr 1fr 1fr;
+}
+.sd.sheet.actor .tab.attributes .initiative {
+  grid: 1fr/2fr 1fr 1fr;
+}
+.sd.sheet.actor .tab.attributes .survival {
+  grid: 1fr/1fr 1fr;
+}
+.sd.sheet.actor .tab.attributes .filler {
+  flex: 1 0 auto;
+}
+.sd.sheet.actor .tab.inventory {
+  --color-encumbrance-light: yellow;
+  --color-encumbrance-heavy: red;
+}
+.sd.sheet.actor .tab.inventory .equipment label {
+  margin: 0 0 2px 8px;
+  font-size: 0.7em;
+  display: block;
+}
+.sd.sheet.actor .tab.inventory .equipment .roll {
+  font-size: 2em;
+  padding-right: 0.4rem;
+}
+.sd.sheet.actor .tab.inventory .inventory {
+  display: grid;
+  grid: var(--font-h4-size) 1fr/1fr 1fr;
+  gap: 1rem 2rem;
+  justify-items: stretch;
+}
+.sd.sheet.actor .tab.inventory .inventory .enc-light {
+  color: var(--color-encumbrance-light);
+}
+.sd.sheet.actor .tab.inventory .inventory .enc-heavy {
+  color: var(--color-encumbrance-heavy);
+}
+.sd.sheet.actor .tab.inventory .inventory h4 {
+  margin: 0;
+  text-align: center;
+}
+.sd.sheet.actor .tab.inventory .inventory .item-list {
+  display: grid;
+  grid: 1fr/auto 1fr minmax(0, 20%) auto;
+  gap: 1ch;
+  align-items: center;
+  justify-items: stretch;
+}
+.sd.sheet.actor .tab.inventory .inventory .item-list label {
+  text-align: center;
+  border-bottom: solid 1px;
+  border-radius: 0;
+  height: calc(1em + 0.5rem);
+}
+.sd.sheet.actor .tab.inventory .inventory .item-list input[type=number] {
+  width: 100%;
+  min-width: 0;
+  height: calc(1em + 0.5rem);
+  text-align: center;
+}
+.sd.sheet.actor .tab.traits div label {
+  margin: 0 0 2px 8px;
+  font-size: 0.7em;
+  display: block;
+}
+.sd.sheet.actor .tab.traits .trait-columns {
+  gap: 0 2ch;
+}
+.sd.sheet.actor .tab.traits .trait-header {
+  align-items: baseline;
+}
+.sd.sheet.actor .tab.traits .trait-header h4 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.sd.sheet.actor .tab.traits .trait-list {
+  display: grid;
+  grid: 1fr/auto 4fr 1fr auto;
+  align-items: center;
+}
+.sd.sheet.actor .tab.traits .trait-list p {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid;
+  margin: 0;
+  height: calc(1em + 0.5rem);
+}
+.sd.sheet.actor .tab.traits .trait-list a {
+  font-size: 1.5em;
+}
+.sd.sheet.actor .tab.traits .trait-list > :nth-child(4n) {
+  margin-left: 0.5ch;
+}
+.sd.sheet.actor .tab.traits .trait-list > :nth-child(4n+1) {
+  margin-right: 0.5ch;
+}
+.sd.sheet.actor .tab.spells div label {
+  margin: 0 0 2px 8px;
+  font-size: 0.7em;
+  display: block;
+}
+.sd.sheet.actor .tab.spells .spell-columns {
+  gap: 0 2ch;
+}
+.sd.sheet.actor .tab.spells .spell-header {
+  align-items: baseline;
+}
+.sd.sheet.actor .tab.spells .spell-header h4 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.sd.sheet.actor .tab.spells .spell-list {
+  display: grid;
+  grid: 1fr/auto 4fr auto;
+  align-items: center;
+}
+.sd.sheet.actor .tab.spells .spell-list p {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid;
+  margin: 0;
+  height: calc(1em + 0.5rem);
+}
+.sd.sheet.actor .tab.spells .spell-list a {
+  font-size: 1.5em;
+}
+.sd.sheet.actor .tab.spells .spell-list > :nth-child(3n) {
+  margin-left: 0.5ch;
+}
+.sd.sheet.actor .tab.spells .spell-list > :nth-child(3n+1) {
+  margin-right: 0.5ch;
+}
+.sd.sheet.actor .tab.description h4 {
+  text-align: center;
+}
+.sd.sheet.actor .tab.npc-attributes {
+  gap: 1rem;
+}
+.sd.sheet.actor .tab.npc-attributes .attacks {
+  align-items: center;
+}
+.sd.sheet.actor .tab.npc-attributes .table-header {
+  width: 100%;
+}
+.sd.sheet.actor .tab.npc-attributes .table-header h4 {
+  text-align: center;
+}
+.sd.sheet.actor .tab.npc-attributes .table-header a {
+  margin-bottom: 1rem;
+  font-size: var(--font-h4-size);
+}
+.sd.sheet.actor .tab.npc-attributes .attacks-list {
+  display: grid;
+  grid: 1fr/1fr 8fr 4fr 4fr 1fr;
+  align-items: center;
+}
+.sd.sheet.actor .tab.npc-attributes .attacks-list > :nth-child(5n), .sd.sheet.actor .tab.npc-attributes .attacks-list > :nth-child(5n+1) {
+  justify-self: center;
+  font-size: 1.5em;
+}
+.sd.sheet.actor .tab.npc-attributes .attacks-list label {
+  margin: 0 0 2px 8px;
+  font-size: 0.7em;
+  display: block;
+}
+
+.sd.sheet.item .header-details {
+  gap: 0 1ch;
+}
+.sd.sheet.item .item-name input {
+  height: auto;
+}
+.sd.sheet.item .summary, .sd.sheet.item .weapon-attributes, .sd.sheet.item .underlined-input, .sd.sheet.item .shield-attributes {
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0;
+  border-top: none;
+}
+.sd.sheet.item .summary label, .sd.sheet.item .weapon-attributes label, .sd.sheet.item .underlined-input label, .sd.sheet.item .shield-attributes label {
+  margin: 0 0 2px 8px;
+  font-size: 0.7em;
+  display: block;
+}
+.sd.sheet.item .summary input[type=checkbox], .sd.sheet.item .weapon-attributes input[type=checkbox], .sd.sheet.item .underlined-input input[type=checkbox], .sd.sheet.item .shield-attributes input[type=checkbox] {
+  height: var(--input-height);
+}
+.sd.sheet.item .summary.notify input, .sd.sheet.item .weapon-attributes.notify input, .sd.sheet.item .underlined-input.notify input, .sd.sheet.item .shield-attributes.notify input {
+  font-weight: bold;
+  animation: 0.8s ease-in 1s infinite alternate notify;
+}
+.sd.sheet.item .armor-attributes .penalties > .flexrow {
+  gap: 1ch;
+}
+.sd.sheet.item .item-description h4 {
+  text-align: center;
+}
+
+.sd.sheet.trait .header-details {
+  gap: 0 1ch;
+  flex-wrap: nowrap;
+}
+.sd.sheet.trait .trait-name input {
+  height: 1.2em;
+}
+.sd.sheet.trait .summary, .sd.sheet.trait .trait-attributes {
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0;
+  border-top: none;
+}
+.sd.sheet.trait .summary label, .sd.sheet.trait .trait-attributes label {
+  margin: 0 0 2px 8px;
+  font-size: 0.7em;
+  display: block;
+}
+.sd.sheet.trait .summary input[type=checkbox], .sd.sheet.trait .trait-attributes input[type=checkbox] {
+  height: var(--input-height);
+}
+.sd.sheet.trait .summary.notify input, .sd.sheet.trait .trait-attributes.notify input {
+  font-weight: bold;
+  animation: 0.8s ease-in 1s infinite alternate notify;
+}
+.sd.sheet.trait .trait-attributes h4 {
+  text-align: center;
+}
+
+.sd.sheet.spell .header-details {
+  gap: 0 1ch;
+  flex-wrap: nowrap;
+}
+.sd.sheet.spell .spell-name input {
+  height: 1.2em;
+}
+.sd.sheet.spell .summary, .sd.sheet.spell .spell-attributes {
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0;
+  border-top: none;
+}
+.sd.sheet.spell .summary label, .sd.sheet.spell .spell-attributes label {
+  margin: 0 0 2px 8px;
+  font-size: 0.7em;
+  display: block;
+}
+.sd.sheet.spell .summary input[type=checkbox], .sd.sheet.spell .spell-attributes input[type=checkbox] {
+  height: var(--input-height);
+}
+.sd.sheet.spell .summary.notify input, .sd.sheet.spell .spell-attributes.notify input {
+  font-weight: bold;
+  animation: 0.8s ease-in 1s infinite alternate notify;
+}
+.sd.sheet.spell .summary .casting-time, .sd.sheet.spell .spell-attributes .casting-time {
+  flex: 0.5;
+}
+.sd.sheet.spell .spell-attributes h4 {
+  text-align: center;
+}
+
+/*# sourceMappingURL=sd.css.map */
